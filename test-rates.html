@@ -363,24 +363,6 @@
   </a>
 
   <script src="script.js"></script>
-  <script>
-    let currentScroll = window.pageYOffset;
-    let targetScroll  = window.pageYOffset;
-
-    window.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      targetScroll += e.deltaY * 0.7;
-      targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
-    }, { passive: false });
-
-    function smoothScrolling() {
-      currentScroll += (targetScroll - currentScroll) * 0.08;
-      window.scrollTo(0, currentScroll);
-      requestAnimationFrame(smoothScrolling);
-    }
-
-    smoothScrolling();
-  </script>
 
 </body>
 </html>
